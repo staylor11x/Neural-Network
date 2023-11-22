@@ -74,10 +74,10 @@ class NeuralNetwork():
     def update_params(self):
         '''update the weights and bias' of the network'''
 
-        self.params['W1'] -= self.learning_rate * self.params['dW1']
-        self.params['b1'] -= self.learning_rate * np.reshape(self.params['db1'], (10,1))
-        self.params['W2'] -= self.learning_rate * self.params['dW2']
-        self.params['b2'] -= self.learning_rate * np.reshape(self.params['db2'], (4,1))
+        self.params['W1'] = self.params['W1'] - self.learning_rate * self.params['dW1']
+        self.params['b1'] = self.params['b1'] - self.learning_rate * np.reshape(self.params['db1'], (10,1))
+        self.params['W2'] = self.params['W2'] - self.learning_rate * self.params['dW2']
+        self.params['b2'] = self.params['b2'] - self.learning_rate * np.reshape(self.params['db2'], (4,1))
 
     def get_prediction(self,A2):
         '''Get the models predictions'''
